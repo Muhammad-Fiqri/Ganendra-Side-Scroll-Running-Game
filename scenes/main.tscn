@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4cripulbc6x7"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_ac8c8"]
+[ext_resource type="PackedScene" uid="uid://c65wvw0u4o6ln" path="res://scenes/bg.tscn" id="1_cfwia"]
+[ext_resource type="PackedScene" uid="uid://dy31g70k05el0" path="res://scenes/ground.tscn" id="2_10c3w"]
+[ext_resource type="PackedScene" uid="uid://dtigpfj0jntjp" path="res://scenes/player.tscn" id="3_d18sa"]
+[ext_resource type="PackedScene" uid="uid://b4n2y5jtts8eo" path="res://scenes/hud.tscn" id="5_lk8qq"]
+[ext_resource type="AudioStream" uid="uid://be5873feds5fs" path="res://assets/Song/mixkit-smooth-like-jazz-24.ogg" id="6_vfsk6"]
+[ext_resource type="AudioStream" uid="uid://ntt0g4tspanw" path="res://assets/Song/spark-groove-electro-swing-dancy-funny-198158.ogg" id="7_kwodw"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_ac8c8")
+
+[node name="Bg" parent="." instance=ExtResource("1_cfwia")]
+
+[node name="Ground" parent="." instance=ExtResource("2_10c3w")]
+
+[node name="Player" parent="." instance=ExtResource("3_d18sa")]
+position = Vector2(200, 490)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 325)
+
+[node name="HUD" parent="." instance=ExtResource("5_lk8qq")]
+
+[node name="idleMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_vfsk6")
+volume_db = -20.0
+
+[node name="runMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_kwodw")
+volume_db = -20.0
